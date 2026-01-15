@@ -81,7 +81,7 @@ const container = {
     opacity: 1,
 
     transition: {
-      delayChildren: 4,
+      delayChildren: 1,
       staggerChildren: 0.3,
     },
   },
@@ -95,7 +95,7 @@ const subItem = {
     opacity: 1,
 
     transition: {
-      delayChildren: 5,
+      delayChildren: 2,
       staggerChildren: 2,
     },
   },
