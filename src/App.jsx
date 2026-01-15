@@ -18,16 +18,16 @@ import Loader from "./components/Loader";
 function App() {
   const containerRef = useRef(null);
 
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   const handleLoading = () => {
     setLoaded(false);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     window.addEventListener("load", handleLoading);
     return () => window.removeEventListener("load", handleLoading);
-  }, []);
+  }, []);*/
 
   return (
     <>
