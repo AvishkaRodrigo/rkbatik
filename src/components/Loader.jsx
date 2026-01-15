@@ -65,7 +65,7 @@ const textVariants = {
     opacity: 1,
 
     transition: {
-      duration: 2,
+      duration: 1,
       repeat: Infinity, // repeat infinite times
       repeatDelay: 1,
       ease: "easeInOut",
@@ -94,7 +94,7 @@ function Loader() {
     <Container
       initial={{ y: 0, opacity: 1 }}
       exit={{ y: "100%", opacity: 0 }}
-      transition={{ duration: 2 , delay: 3 }}
+      transition={{ duration: 2 , delay: 1 }}
     >
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
