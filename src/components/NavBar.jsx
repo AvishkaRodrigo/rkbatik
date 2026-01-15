@@ -111,7 +111,7 @@ function NavBar() {
         }}
         transition={{
           duration: 2,
-          delay: 4,
+          delay: 0,
         }}
       >
         <MenuItems
