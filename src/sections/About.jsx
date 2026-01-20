@@ -159,7 +159,7 @@ function About() {
               </a>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <a href="https://www.instagram.com/rkrealbatik?igsh=MXFvc3ZkcXdjMGpzeg==" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.tiktok.com/@rk.real.bathik?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
                 <img 
                   src={assets.tiktokIcon} 
                   alt="TikTok Logo" 
