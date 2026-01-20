@@ -8,7 +8,6 @@ const Section = styled.section`
   min-height: 100dvh;
   width: 80dvw;
   display: flex;
-
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -24,6 +23,7 @@ const Title = styled.h1`
   font-size: ${(props) => props.theme.fontBig};
   font-family: "Kaushan Script";
   font-weight: 300;
+  color: ${(props) => props.theme.gold};
 
   position: absolute;
   top: 1rem;
@@ -49,6 +49,11 @@ const Left = styled.div`
   z-index: 5;
   margin-top: 20%;
 
+  p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
   @media (max-width: 1024px) {
     width: 80%;
     position: absolute;
@@ -56,7 +61,6 @@ const Left = styled.div`
     left: 50%;
     transform: translate(-50%, -50%) !important;
     margin: 0 auto;
-
     padding: 2rem;
     font-weight: 600;
     backdrop-filter: blur(2px);
@@ -67,6 +71,7 @@ const Left = styled.div`
   @media (max-width: 768px) {
     font-size: ${(props) => props.theme.fontmd};
   }
+
   @media (max-width: 480px) {
     font-size: ${(props) => props.theme.fontsm};
     width: 70%;
@@ -109,14 +114,12 @@ const Right = styled.div`
 
     .small-img-1 {
       width: 30%;
-      height: auto;
       left: 5%;
       bottom: 10%;
     }
 
     .small-img-2 {
       width: 30%;
-      height: auto;
       left: 60%;
       bottom: 20%;
     }
@@ -126,87 +129,145 @@ const Right = styled.div`
 function About() {
   return (
     <>
+
+      <title>
+        About RK Real Batik | Sri Lankan Batik in Adelaide, Australia
+      </title>
+      <meta
+        name="description"
+        content="RK Real Batik is a family-run batik clothing brand in Adelaide offering authentic Sri Lankan batik dresses for men, women, families, and Sri Lankan New Year celebrations across Australia."
+      />
+
       <Section id="fixed-target" className="about">
         <Title
           data-scroll
           data-scroll-speed="-2"
           data-scroll-direction="horizontal"
         >
-          About Us
+          About RK Real Batik
         </Title>
+
         <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-          Embrace the perfect balance of tradition, elegance, and craftsmanship at Rk Real Batik. We are a family-run brand based in Adelaide, dedicated to bringing the beauty of South Asian and Sri Lankan heritage to your doorstep through refined batik clothing. Each piece is thoughtfully crafted to celebrate authentic artistry, cultural pride, and timeless design with effortless sophistication.
-          <br />
-          <br />
-          Follow us on social media:
-          <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Grid item xs={12} sm={6}>
-              <a href="https://www.facebook.com/profile.php?id=61586077802773" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src={assets.facebookIcon} 
-                  alt="Facebook Logo" 
-                  style={{ width: '50px', height: 'auto' }}
+          <p>
+            RK Real Batik is a family-run batik clothing brand based in Adelaide,
+            proudly bringing authentic Sri Lankan batik to customers across
+            Australia. Our collections reflect a deep appreciation for
+            craftsmanship, tradition, and refined design.
+          </p>
+
+          <p>
+            We offer thoughtfully designed batik dresses for men, women, and
+            families, blending cultural heritage with modern elegance. Each
+            piece is handcrafted using time-honoured techniques and premium
+            fabrics to ensure comfort, quality, and timeless appeal.
+          </p>
+
+          <p>
+            RK Real Batik also specialises in batik dresses for Sri Lankan New
+            Year, cultural celebrations, and family occasions, helping you
+            celebrate meaningful moments with style and authenticity.
+          </p>
+
+          <p><strong>Follow us on social media:</strong></p>
+
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={6} sm={3}>
+              <a
+                href="https://www.facebook.com/profile.php?id=61586077802773"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={assets.facebookIcon}
+                  alt="RK Real Batik Facebook page"
+                  style={{ width: "50px" }}
                 />
               </a>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <a href="https://www.instagram.com/rkrealbatik/" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src={assets.instagramIcon} 
-                  alt="Instagram Logo" 
-                  style={{ width: '50px', height: 'auto' }}
+
+            <Grid item xs={6} sm={3}>
+              <a
+                href="https://www.instagram.com/rkrealbatik/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={assets.instagramIcon}
+                  alt="RK Real Batik Instagram profile"
+                  style={{ width: "50px" }}
                 />
               </a>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <a href="https://www.tiktok.com/@rk.real.bathik?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src={assets.tiktokIcon} 
-                  alt="TikTok Logo" 
-                  style={{ width: '50px', height: 'auto' }}
+
+            <Grid item xs={6} sm={3}>
+              <a
+                href="https://www.tiktok.com/@rk.real.bathik"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={assets.tiktokIcon}
+                  alt="RK Real Batik TikTok account"
+                  style={{ width: "50px" }}
                 />
               </a>
             </Grid>
-            <Grid item xs={12} sm={6} data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.1">
-              <a href="https://api.whatsapp.com/send?phone=%2B61416503255" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src={assets.whatsappIcon} 
-                  alt="Whatsapp Logo" 
-                  style={{ width: '50px', height: 'auto' }}
+
+            <Grid item xs={6} sm={3}>
+              <a
+                href="https://api.whatsapp.com/send?phone=%2B61416503255"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={assets.whatsappIcon}
+                  alt="Contact RK Real Batik on WhatsApp"
+                  style={{ width: "50px" }}
                 />
               </a>
             </Grid>
           </Grid>
         </Left>
+
         <Right>
-          <img src={assets.img_1} alt="About Us" />
+          <img
+            src={assets.img_1}
+            alt="Sri Lankan batik clothing brand in Adelaide"
+          />
           <img
             data-scroll
             data-scroll-speed="5"
             src={assets.img_2}
             className="small-img-1"
-            alt="About Us"
+            alt="Handcrafted batik dresses for men and women"
           />
           <img
             data-scroll
             data-scroll-speed="-2"
             src={assets.img_11}
             className="small-img-2"
-            alt="About Us"
+            alt="Family batik dresses for cultural celebrations"
           />
         </Right>
-      
       </Section>
-      <div style={{width: "100%", paddingTop: "20px", paddingBottom: "20px"}}>
+
+      <div style={{ width: "100%", padding: "20px 0" }}>
         <Marquee pauseOnHover gradient>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
-          <span style={{ marginRight: "100px" }}>Follow us on social media</span>
+          <span style={{ marginRight: "100px" }}>
+            Celebrate Sri Lankan New Year in Style
+          </span>
+          <span style={{ marginRight: "100px" }}>
+            Authentic Sri Lankan Batik in Adelaide
+          </span>
+          <span style={{ marginRight: "100px" }}>
+            Batik Dresses for all Family Members
+          </span>
+          <span style={{ marginRight: "100px" }}>
+            Handcrafted Batik Clothing
+          </span>
+          <span style={{ marginRight: "100px" }}>
+            Follow RK Real Batik on social media
+          </span>
         </Marquee>
       </div>
     </>
