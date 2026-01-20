@@ -201,7 +201,7 @@ function NewArrival() {
         data-scroll-speed="-2"
         data-scroll-direction="horizontal"
       >
-        New Arrival
+        New Arrivals
       </Title>
 
       <Container ref={scrollingRef}>
