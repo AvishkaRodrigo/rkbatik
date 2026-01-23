@@ -17,9 +17,10 @@ const Section = styled.section`
   align-items: flex-start;
   position: relative;
 
-  /* Mobile: Ensure container handles vertical stacking context */
+  /* Mobile: Stack items vertically */
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: center; /* Center content vertically */
   }
 `;
 
@@ -29,6 +30,8 @@ const Title = styled.h1`
   font-weight: 300;
   text-shadow: 1px 1px 1px ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
+  
+  /* Desktop: Keep absolute */
   position: absolute;
   top: 1rem;
   left: 5%;
@@ -38,9 +41,22 @@ const Title = styled.h1`
     font-size: ${(props) => props.theme.fontxxl};
   }
 
+  /* --- MOBILE FIXES --- */
   @media (max-width: 768px) {
     font-size: ${(props) => props.theme.fontxl};
-    top: 0.5rem; /* Adjust for tight top space */
+    
+    /* 1. Stop Floating: Make it part of the document flow */
+    position: relative; 
+    top: unset;
+    left: unset;
+    
+    /* 2. Center and Spacing */
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem; /* Give it some breathing room at the top */
+    
+    /* 3. STOP ANIMATION: Override Locomotive Scroll parallax */
+    transform: none !important; 
   }
 `;
 
@@ -79,7 +95,7 @@ const Left = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 30vh; /* 30% of screen height */
+    height: 25vh; /* 30% of screen height */
     min-height: unset; /* Override desktop min-height */
     
     /* Center text in the top 30% */
@@ -116,8 +132,8 @@ const Right = styled.div`
 
   @media (max-width: 768px) {
     left: 0;
-    top: 30vh;
-    height: 70vh;
+    top: 25vh;
+    height: 75vh;
     min-height: unset;
     
     width: max-content; /* Change from 'auto' to 'max-content' to ensure accurate scrollWidth */
