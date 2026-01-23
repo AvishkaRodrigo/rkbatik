@@ -32,7 +32,7 @@ const Overlay = styled.div`
   background: url(${assets.bgFrame}) no-repeat center center/cover;
 
   @media (max-width: 1120px) {
-    width: 40dvw;
+    width: auto;
     height: 80dvh;
   }
 
@@ -43,6 +43,7 @@ const Overlay = styled.div`
 
   @media (max-width: 768px) {
     width: 60dvw;
+    height: 70dvh;
   }
 
   @media (max-width: 480px) {

@@ -17,7 +17,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  min-height: 100dvh;
+  // min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
