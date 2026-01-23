@@ -19,25 +19,31 @@ const Section = styled.section`
   }
 `;
 
+// UPDATED TITLE COMPONENT
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontBig};
+  font-size: ${(props) => props.theme.fontxxl};
   font-family: "Kaushan Script";
   font-weight: 300;
   color: ${(props) => props.theme.gold};
-
-  position: absolute;
-  top: 1rem;
-  left: 5%;
   z-index: 5;
 
+  /* Desktop: Position relative to the Left Text container */
+  position: absolute;
+  top: -8rem; /* Moves title up above the paragraph text */
+  left: 0;
+
+  /* Mobile/Tablet: Drop into the flow inside the glass box */
   @media (max-width: 1024px) {
-    font-size: ${(props) => `calc(${props.theme.fontBig} - 5vw)`};
-    top: 0;
-    left: 0;
+    position: static; /* Removes absolute positioning */
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: ${(props) => `calc(${props.theme.fontBig} - 2vw)`};
   }
 
   @media (max-width: 480px) {
-    font-size: ${(props) => props.theme.fontxxxl};
+    font-size: ${(props) => props.theme.fontxxl};
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -63,9 +69,15 @@ const Left = styled.div`
     margin: 0 auto;
     padding: 2rem;
     font-weight: 600;
+    
+    /* This background now protects the Title too */
     backdrop-filter: blur(2px);
-    background-color: ${(props) => `rgba(${props.theme.textRgba},0.4)`};
+    background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.7)`};
     border-radius: 20px;
+    
+    /* Ensure flex column so Title sits on top */
+    display: flex;
+    flex-direction: column;
   }
 
   @media (max-width: 768px) {
@@ -74,7 +86,7 @@ const Left = styled.div`
 
   @media (max-width: 480px) {
     font-size: ${(props) => props.theme.fontsm};
-    width: 70%;
+    width: 85%; /* Slightly wider on mobile for better fit */
   }
 `;
 
@@ -124,12 +136,28 @@ const Right = styled.div`
       bottom: 20%;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 100dvh;
+      object-fit: cover;
+    }
+
+    .small-img-1,
+    .small-img-2 {
+      display: none;
+    }
+  }
 `;
 
 function About() {
   return (
     <>
-
       <title>
         About RK Real Batik | Sri Lankan Batik in Adelaide, Australia
       </title>
@@ -139,15 +167,16 @@ function About() {
       />
 
       <Section id="fixed-target" className="about">
-        <Title
-          data-scroll
-          data-scroll-speed="-2"
-          data-scroll-direction="horizontal"
-        >
-          About RK Real Batik
-        </Title>
+        
+        {/* Title removed from here and moved inside Left below */}
 
         <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+          
+          {/* TITLE MOVED HERE */}
+          <Title>
+            About RK Real Batik
+          </Title>
+
           <p>
             RK Real Batik is a family-run batik clothing brand based in Adelaide,
             proudly bringing authentic Sri Lankan batik to customers across
@@ -171,69 +200,35 @@ function About() {
           <p><strong>Follow us on social media:</strong></p>
 
           <Grid container spacing={2} justifyContent="center">
+            {/* Social Media Icons (Unchanged) */}
             <Grid item xs={6} sm={3}>
-              <a
-                href="https://www.facebook.com/profile.php?id=61586077802773"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={assets.facebookIcon}
-                  alt="RK Real Batik Facebook page"
-                  style={{ width: "50px" }}
-                />
+              <a href="https://www.facebook.com/profile.php?id=61586077802773" target="_blank" rel="noopener noreferrer">
+                <img src={assets.facebookIcon} alt="RK Real Batik Facebook page" style={{ width: "50px" }} />
               </a>
             </Grid>
 
             <Grid item xs={6} sm={3}>
-              <a
-                href="https://www.instagram.com/rkrealbatik/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={assets.instagramIcon}
-                  alt="RK Real Batik Instagram profile"
-                  style={{ width: "50px" }}
-                />
+              <a href="https://www.instagram.com/rkrealbatik/" target="_blank" rel="noopener noreferrer">
+                <img src={assets.instagramIcon} alt="RK Real Batik Instagram profile" style={{ width: "50px" }} />
               </a>
             </Grid>
 
             <Grid item xs={6} sm={3}>
-              <a
-                href="https://www.tiktok.com/@rk.real.bathik"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={assets.tiktokIcon}
-                  alt="RK Real Batik TikTok account"
-                  style={{ width: "50px" }}
-                />
+              <a href="https://www.tiktok.com/@rk.real.bathik" target="_blank" rel="noopener noreferrer">
+                <img src={assets.tiktokIcon} alt="RK Real Batik TikTok account" style={{ width: "50px" }} />
               </a>
             </Grid>
 
             <Grid item xs={6} sm={3}>
-              <a
-                href="https://api.whatsapp.com/send?phone=%2B61416503255"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={assets.whatsappIcon}
-                  alt="Contact RK Real Batik on WhatsApp"
-                  style={{ width: "50px" }}
-                />
+              <a href="https://api.whatsapp.com/send?phone=%2B61416503255" target="_blank" rel="noopener noreferrer">
+                <img src={assets.whatsappIcon} alt="Contact RK Real Batik on WhatsApp" style={{ width: "50px" }} />
               </a>
             </Grid>
           </Grid>
         </Left>
 
         <Right>
-          <img
-            src={assets.img_1}
-            alt="Sri Lankan batik clothing brand in Adelaide"
-          />
+          <img src={assets.img_1} alt="Sri Lankan batik clothing brand in Adelaide" />
           <img
             data-scroll
             data-scroll-speed="5"
@@ -253,21 +248,11 @@ function About() {
 
       <div style={{ width: "100%", padding: "20px 0" }}>
         <Marquee pauseOnHover gradient>
-          <span style={{ marginRight: "100px" }}>
-            Celebrate Sri Lankan New Year in Style
-          </span>
-          <span style={{ marginRight: "100px" }}>
-            Authentic Sri Lankan Batik in Adelaide
-          </span>
-          <span style={{ marginRight: "100px" }}>
-            Batik Dresses for all Family Members
-          </span>
-          <span style={{ marginRight: "100px" }}>
-            Handcrafted Batik Clothing
-          </span>
-          <span style={{ marginRight: "100px" }}>
-            Follow RK Real Batik on social media
-          </span>
+          <span style={{ marginRight: "100px" }}>Celebrate Sri Lankan New Year in Style</span>
+          <span style={{ marginRight: "100px" }}>Authentic Sri Lankan Batik in Adelaide</span>
+          <span style={{ marginRight: "100px" }}>Batik Dresses for all Family Members</span>
+          <span style={{ marginRight: "100px" }}>Handcrafted Batik Clothing</span>
+          <span style={{ marginRight: "100px" }}>Follow RK Real Batik on social media</span>
         </Marquee>
       </div>
     </>
