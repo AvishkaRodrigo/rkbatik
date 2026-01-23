@@ -52,7 +52,7 @@ function App() {
             <main className="app" data-scroll-container ref={containerRef}>
               <Home />
               <Shop />
-              <Banner />
+              {/* <Banner /> */}
               <NewArrival />
               <About />
               <Footer />

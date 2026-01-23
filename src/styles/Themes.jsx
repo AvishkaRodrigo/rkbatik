@@ -5,6 +5,7 @@ export const dark = {
     text: '#fff',
     bodyRgba: '32, 32, 32',
     textRgba: '255, 255, 255',
+    gold: "#a98008",
 
     grey: '#bebebe', // grey shade
 
