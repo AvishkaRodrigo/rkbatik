@@ -38,7 +38,7 @@ const Title = styled.h1`
     display: block;
     text-align: center;
     margin-bottom: 1rem;
-    font-size: ${(props) => `calc(${props.theme.fontBig} - 2vw)`};
+    font-size: ${(props) => `${props.theme.fontxxl}`};
   }
 
   @media (max-width: 480px) {
