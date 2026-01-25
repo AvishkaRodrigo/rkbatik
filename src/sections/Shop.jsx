@@ -45,17 +45,14 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: ${(props) => props.theme.fontxl};
     
-    /* 1. Stop Floating: Make it part of the document flow */
     position: relative; 
     top: unset;
     left: unset;
     
-    /* 2. Center and Spacing */
     text-align: center;
     width: 100%;
-    margin-top: 2rem; /* Give it some breathing room at the top */
+    margin-top: 2rem;
     
-    /* 3. STOP ANIMATION: Override Locomotive Scroll parallax */
     transform: none !important; 
   }
 `;
@@ -111,7 +108,6 @@ const Left = styled.div`
       text-align: center;
     }
   }
-  /* --- MOBILE CHANGES END --- */
 `;
 
 const Right = styled.div`
@@ -136,9 +132,9 @@ const Right = styled.div`
     height: 75vh;
     min-height: unset;
     
-    width: max-content; /* Change from 'auto' to 'max-content' to ensure accurate scrollWidth */
+    width: max-content; 
     padding-left: 5%; 
-    padding-right: 5%; /* Add padding right so the last item isn't flush against the edge */
+    padding-right: 5%;
     
     align-items: center;
   }
@@ -171,7 +167,7 @@ const Item = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 15rem;
-    margin-right: 3rem; /* Reduce margin on mobile */
+    margin-right: 3rem;
   }
 `;
 
@@ -200,23 +196,15 @@ function Shop() {
     let element = ref.current;
     let scrollingElement = horizontalRef.current;
 
-    // 1. Get accurate dimensions
     let scrollWidth = scrollingElement.scrollWidth;
     let viewportWidth = window.innerWidth;
 
-    // 2. Calculate distance based on device type
-    // On Mobile (<= 768px): Scroll exactly to the end (Total Width - Screen Width)
-    // On Desktop: Keep your centering logic or adjust to (Total Width - 65% of Screen Width)
     let scrollDistance = 0;
 
     if (window.innerWidth <= 768) {
-      // Mobile: Stop exactly when the last image enters the view fully
       scrollDistance = scrollWidth - viewportWidth;
       
-      // Optional: Add a tiny buffer (e.g., 20px) if you have right-padding
-      // scrollDistance = scrollWidth - viewportWidth + 20; 
     } else {
-      // Desktop: Keep your original logic to center the last item
       scrollDistance = scrollWidth - viewportWidth / 2;
     }
 

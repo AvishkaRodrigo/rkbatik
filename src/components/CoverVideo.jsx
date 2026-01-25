@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import HeroVideo from "../assets/video2.mp4";
 import { motion } from "framer-motion";
+import { assets } from "../assets/Assets";
 
 const VideoContainer = styled.section`
   width: 100%;
@@ -117,7 +118,8 @@ function CoverVideo() {
       <Title variants={container} initial="hidden" animate="show">
         <div>
           <div style={{display: 'flex'}}>
-            <motion.h1
+            <img src={assets.RK} alt="RK logo"/>
+            {/* <motion.h1
               variants={item}
               data-scroll
               data-scroll-delay="0.13"
@@ -132,7 +134,7 @@ function CoverVideo() {
               data-scroll-speed="4"
             >
               K
-            </motion.h1>
+            </motion.h1> */}
           </div>
           <div style={{display: "flex", justifyContent:'end'}}>
             <motion.h2

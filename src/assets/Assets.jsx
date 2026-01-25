@@ -35,6 +35,8 @@ import instagramIcon from "./social/insta.png";
 import tiktokIcon from "./social/tiktok.png";
 import whatsappIcon from "./social/whatsapp.png";
 
+import RK from "./RK.png";
+
 export const assets = {
   img_1,
   img_2,
@@ -72,6 +74,8 @@ export const assets = {
   facebookIcon,
   instagramIcon,
   tiktokIcon,
-  whatsappIcon
+  whatsappIcon,
+
+  RK
 
 };

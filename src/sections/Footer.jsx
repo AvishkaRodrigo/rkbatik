@@ -135,7 +135,7 @@ function Footer() {
           data-scroll-speed="2"
           src={assets.logo}
           alt={appConst.APP_NAME}
-          style={{width: "40dvw"}}
+          style={{width: "20dvw"}}
         />
         <h3 data-scroll data-scroll-speed="-1">
           {appConst.APP_NAME}

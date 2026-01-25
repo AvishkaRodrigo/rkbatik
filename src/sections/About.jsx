@@ -230,15 +230,15 @@ function About() {
         <Right>
           <img src={assets.img_1} alt="Sri Lankan batik clothing brand in Adelaide" />
           <img
-            data-scroll
-            data-scroll-speed="5"
+            // data-scroll
+            // data-scroll-speed="5"
             src={assets.img_2}
             className="small-img-1"
             alt="Handcrafted batik dresses for men and women"
           />
           <img
-            data-scroll
-            data-scroll-speed="-2"
+            // data-scroll
+            // data-scroll-speed="-2"
             src={assets.img_11}
             className="small-img-2"
             alt="Family batik dresses for cultural celebrations"
