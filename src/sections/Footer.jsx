@@ -159,7 +159,7 @@ function Footer() {
             </a>
           </li> */}
           <li>
-            <a href="http://google.com" target="_blank" rel="noreferrer">
+            <a href="https://g.page/r/CX2bkmlqCFDnEAI/review" target="_blank" rel="noreferrer">
               Reviews
             </a>
           </li>
