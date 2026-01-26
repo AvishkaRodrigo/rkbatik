@@ -220,7 +220,7 @@ function About() {
             </Grid>
 
             <Grid item xs={6} sm={3}>
-              <a href="https://api.whatsapp.com/send?phone=%2B61416503255" target="_blank" rel="noopener noreferrer">
+              <a href="https://api.whatsapp.com/send?phone=%2B61401882282" target="_blank" rel="noopener noreferrer">
                 <img src={assets.whatsappIcon} alt="Contact RK Real Batik on WhatsApp" style={{ width: "50px" }} />
               </a>
             </Grid>
